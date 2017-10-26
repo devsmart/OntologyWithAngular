@@ -1,0 +1,97 @@
+
+
+movie-list .movie-list {
+    margin: 0 5px;
+    padding: 0;
+}
+
+    movie-list .movie-list li {
+        list-style: none;
+        margin: 5px;
+    }
+
+movie-list .poster {
+    max-width: 100px
+}
+
+movie-list .list {
+    height: 755px;
+    overflow-y: auto;
+}
+
+movie-list .content {
+    margin-left: 110px
+}
+
+    movie-list .content .name {
+        font-weight: bold;
+        font-size: 150%;
+    }
+
+    movie-list .content .desc {
+        max-height: 40px;
+        white-space: normal;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        display: inline-block;
+    }
+
+    movie-list .content button.selected {
+        background-color: #2b532b;
+        border-color: #b6b9b6;
+    }
+
+movie-detail .detail {
+    display: block;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: 50% 50%;
+    will-change: opacity;
+    transition: filter 1s;
+    color: whitesmoke;
+}
+
+    movie-detail .detail .movie-outer {
+        background-image: radial-gradient(circle at 20% 50%, rgba(61.96%, 84.71%, 89.41%, 0.94) 0%, rgba(10.59%, 34.12%, 48.24%, 0.94) 100%);
+        padding: 0 10px 10px 10px;
+    }
+
+        movie-detail .detail .movie-outer .name {
+            text-align: center;
+            padding: 2px;
+        }
+
+        movie-detail .detail .movie-outer .genre,
+        movie-detail .detail .movie-outer .director,
+        movie-detail .detail .movie-outer .writer {
+            padding: 0 5px;
+            border-right: 1px solid #727274
+        }
+
+            movie-detail .detail .movie-outer .genre:last-child,
+            movie-detail .detail .movie-outer .director:last-child,
+            movie-detail .detail .movie-outer .writer:last-child {
+                border-right: none;
+            }
+
+        movie-detail .detail .movie-outer .poster {
+            text-align: center;
+            padding-bottom: 5px;
+        }
+
+            movie-detail .detail .movie-outer .poster img {
+                width: 200px;
+            }
+
+        movie-detail .detail .movie-outer .actor {
+            width: 30px;
+            padding: 2px;
+            display: inline-block;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+
+        movie-detail .detail .movie-outer .cast {
+            margin: 5px;
+            border: 1px solid #c1c1b7
+        }

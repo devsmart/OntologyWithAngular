@@ -1,0 +1,40 @@
+<div class="detail" ng-style="getBackgroundStyle(movie.data.backdrop_path)">
+    <span ng-if="movie && movie.loadingStatus === 1">Loading.....</span>
+    <div ng-if="movie.data" class="movie-outer" itemscope itemtype="http://schema.org/Movie">
+        <div class="name"><h2 itemprop="name"><span class="name" ng-bind="movie.data.title"></span> <span class="year" ng-bind="getMovieYear(movie.data.release_date)"></span></h2></div>
+        <div class="poster">
+            <img ng-src="{{getImagePath(movie.data.poster_path)}}" alt="movie poster" class="poster" />
+        </div>
+        <div>
+            <span><strong>Overview</strong></span>
+            <p itemprop="description">A couple's relationship is tested when uninvited guests arrive at their home, disrupting their tranquil existence.</p>
+        </div>
+        <div><strong>Released Date:</strong> <span class="" itemprop="datePublished" content="{{movie.data.release_date}}" ng-bind="movie.data.release_date"></span></div>
+        <div><strong>Genre:</strong> <span class="genre" ng-repeat="g in movie.data.genres">{{g.name}}</span></div>
+        <div><span>More info from <a ng-href="{{'http://www.imdb.com/title/' + movie.data.imdb_id}}" itemprop="url" target="_blank"> <strong>IMDB</strong> </a></span></div>
+        <div class="directors">
+            <strong>
+                Directors:
+            </strong>
+            <span class="director" itemprop="director" itemscope itemtype="http://schema.org/Person" ng-repeat="d in directors">
+                <span itemprop="name" ng-bind="d.name"></span>
+            </span>
+        </div>
+
+        <div class="writers">
+            <strong>Writers:</strong> <span class="writer" itemprop="creator" itemscope itemtype="http://schema.org/Person" ng-repeat="d in writers">
+                <span itemprop="name" ng-bind="d.name"></span>
+            </span>
+        </div>
+
+        <div class="casts">
+            <strong>
+                Cast
+            </strong>
+            <div class="cast" itemprop="actor" itemscope itemtype="http://schema.org/Person" ng-repeat="d in cast">
+                <img ng-src="{{getImagePath(d.profile_path)}}" alt="{{d.name}}" class="actor" />
+                <span itemprop="name" ng-bind="d.name"></span> -> <span ng-bind="d.character"></span>
+            </div>
+        </div>
+    </div>
+</div>
